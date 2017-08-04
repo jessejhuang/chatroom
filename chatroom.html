@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        socketio = io.connect();
+    </script>
+    <script src= "gen-chat.js"></script>
+    <script src="make-room.js"></script>
+    <script src="addUser.js"></script>
+    <script src="privateMessage.js"></script>
+   <!-- <script src="banUser.js"></script>
+    <script src="kickUser.js"></script>-->
+   <script src="switchOwner.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>Chatrooms</title>
+</head>
+
+<body>
+    
+    <!--<section><h4>-->
+        <div id = "user">
+            Log in:
+            <button onclick="addUser();">Login</button>
+        </div>
+        <div id = "buttons">
+            Rooms:
+            <!--<button id = "lobby">Lobby</button>-->
+            
+        </div>
+        <br> 
+        <div id= "create">Create your own Chatroom!<br>
+            <input type= "text" id="room_name" placeholder = "Room Name"><br>
+            <input type= "password" id = "password" placeholder= "Password (if private room)"><br>
+            
+            <button id = "make_room">Create</button>
+        </div>
+        
+        <div id = "chatroom">Choose a Room to Chat!</div>
+    <!--</h4></section>-->
+    
+    <div id = "creatorBenefits">
+        <!--input username to be banned or kicked out and then click the respective button-->
+        <input type="text" id="banText"/>
+        <button id="banbutton" onClick="banUser()">Ban User</button>
+        <input type="text" id="kickText"/>
+        <button id="kickbutton" onClick="kickUser();">Kick out User</button>
+        <input type="text" id="changeOwnerText"/>
+        <button id ="changeOwnerButton" onclick="switchOwner()">Change the Owner</button> 
+    </div>
+</body>
+</html>
